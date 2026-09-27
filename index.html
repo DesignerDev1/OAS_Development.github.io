@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olivia — Full-Stack Developer & Systems Architect</title>
+    <meta name="description" content="Portfolio of Olivia, specializing in Full-Stack Web Development, .NET Architecture, Technical SEO, and Digital Transformation.">
+    
+    <!-- Schema Markup for Technical SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Olivia",
+      "jobTitle": "Full-Stack Software Engineer & Digital Architect",
+      "knowsAbout": ["C#", ".NET", "Technical SEO", "Web Architecture", "Web3 Development", "Digital Transformation"],
+      "offers": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Full-Stack Web Development"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Technical SEO & Schema Architecture"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Systems Design & Digital Transformation"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-heading: #f0f6fc;
+            --accent-color: #2ea043;
+            --accent-hover: #3fb950;
+            --link-color: #58a6ff;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-code: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2rem;
+        }
+
+        .tagline {
+            font-family: var(--font-code);
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            color: var(--text-heading);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #8b949e;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio {
+            max-width: 750px;
+            font-size: 1.05rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            padding: 0.65rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: background 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2 {
+            color: var(--text-heading);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            color: var(--text-heading);
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #8b949e;
+            margin-bottom: 1rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            background-color: rgba(56, 139, 253, 0.15);
+            color: var(--link-color);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-badge {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="tagline">System.Console.WriteLine("Hello, World!");</div>
+            <h1>Olivia</h1>
+            <div class="subtitle">Full-Stack Software Engineer & Digital Systems Architect</div>
+            <p class="bio">
+                I help businesses scale through robust web architecture, clean code development, and strategic technical SEO. With a background spanning full-stack software development and strategic digital transformation, I bridge the gap between technical infrastructure and measurable growth.
+            </p>
+            <a href="mailto:your-email@example.com" class="btn">Get in Touch</a>
+        </header>
+
+        <main>
+            <!-- Services Section -->
+            <section id="services">
+                <h2>Services & Solutions</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Full-Stack Web Development</h3>
+                        <p>Architecting scalable web applications and clean, maintainable systems built for long-term growth and high performance.</p>
+                        <div class="tags">
+                            <span class="tag">C#</span>
+                            <span class="tag">.NET</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Technical SEO & Organic Growth</h3>
+                        <p>Structured data implementation, custom schema markup, and performance optimization to turn technical builds into organic search assets.</p>
+                        <div class="tags">
+                            <span class="tag">Schema Markup</span>
+                            <span class="tag">XML</span>
+                            <span class="tag">Technical Audits</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Digital Transformation</h3>
+                        <p>Optimizing operational systems, streamlining digital workflows, and modernizing legacy processes into clear, efficient tech stacks.</p>
+                        <div class="tags">
+                            <span class="tag">Systems Design</span>
+                            <span class="tag">Process Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Skills Section -->
+            <section id="skills">
+                <h2>Technical Toolkit</h2>
+                <div class="skills-list">
+                    <span class="skill-badge">C# / .NET Framework</span>
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">HTML5 & CSS3</span>
+                    <span class="skill-badge">Web Architecture</span>
+                    <span class="skill-badge">Schema Markup / Structured Data</span>
+                    <span class="skill-badge">Technical SEO</span>
+                    <span class="skill-badge">Git & GitHub</span>
+                    <span class="skill-badge">Solidity / Smart Contracts (Web3)</span>
+                    <span class="skill-badge">Process Optimization</span>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2>Work Together</h2>
+                <p>Available for technical consultancy, full-stack development projects, and technical SEO architecture.</p>
+                <p style="margin-top: 1rem;">
+                    <strong>Email:</strong> <a href="mailto:your-email@example.com">oasdev001@gmail.com</a><br>
+                    <strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Olivia. Hosted on GitHub Pages.</p>
+        </footer>
+    </div>
+
+</body>
+  </html>
+  
