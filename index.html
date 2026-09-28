@@ -6,6 +6,9 @@
     <title>Olivia — Full-Stack Developer & Systems Architect</title>
     <meta name="description" content="Portfolio of Olivia, specializing in Full-Stack Web Development, .NET Architecture, Technical SEO, and Digital Transformation.">
     
+    <!-- Chart.js CDN for Interactive Graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <!-- Schema Markup for Technical SEO -->
     <script type="application/ld+json">
     {
@@ -42,7 +45,7 @@
 
     <style>
         :root {
-            /* User Requested Color Scheme */
+            /* User Requested Palette */
             --primary-lime: #00ff66;
             --secondary-pink: #ff007f;
             --tertiary-orange: #ff6600;
@@ -109,8 +112,10 @@
         .tagline {
             font-family: var(--font-code);
             color: var(--primary-lime);
-            font-size: 0.95rem;
+            font-size: 1rem;
+            font-weight: bold;
             margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
         }
 
         h1 {
@@ -172,6 +177,16 @@
             background-color: var(--secondary-pink);
             color: #ffffff;
             box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+        }
+
+        .btn-orange {
+            background-color: var(--tertiary-orange);
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+        }
+
+        .btn-orange:hover {
+            box-shadow: 0 0 20px rgba(255, 102, 0, 0.6);
         }
 
         section {
@@ -267,6 +282,67 @@
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
             border: 1px solid rgba(255, 0, 127, 0.3);
+        }
+
+        /* Results & Metrics Dashboard Section */
+        .chart-container-wrapper {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-selector {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .chart-btn {
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .chart-btn.active {
+            background-color: var(--primary-lime);
+            color: #000;
+            font-weight: bold;
+            border-color: var(--primary-lime);
+        }
+
+        .chart-box {
+            position: relative;
+            height: 320px;
+            width: 100%;
+        }
+
+        /* Products & Shop Section */
+        .shop-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: var(--secondary-pink);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+
+        .price-tag {
+            font-size: 1.25rem;
+            color: var(--primary-lime);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: block;
         }
 
         /* Interactive Estimator Widget */
@@ -366,12 +442,11 @@
 
     <div class="container">
         <header>
-            <!-- Headshot Image Placeholder -->
             <div class="profile-img-container">
                 <img src="https://via.placeholder.com/150/12161f/00ff66?text=Olivia" alt="Olivia" class="profile-img" id="avatar">
             </div>
             
-            <div class="tagline">System.Console.WriteLine("Hello, World!");</div>
+            <div class="tagline">A Solution to Every Technical Issue</div>
             <h1>Olivia</h1>
             <div class="subtitle">Full-Stack Software Engineer & Digital Systems Architect</div>
             <p class="bio">
@@ -380,7 +455,8 @@
             
             <div class="cta-group">
                 <a href="#contact" class="btn">Start a Project</a>
-                <a href="#estimator" class="btn btn-secondary">Project Estimator</a>
+                <a href="#shop" class="btn btn-secondary">Templates & Tools</a>
+                <a href="#results" class="btn btn-orange">View Results Metrics</a>
             </div>
         </header>
 
@@ -389,7 +465,6 @@
             <section id="services">
                 <h2>Services & Solutions</h2>
                 
-                <!-- Interactive Filter -->
                 <div class="filter-controls">
                     <button class="filter-btn active" onclick="filterServices('all')">All</button>
                     <button class="filter-btn" onclick="filterServices('dev')">Development</button>
@@ -426,6 +501,59 @@
                             <span class="tag">Systems Design</span>
                             <span class="tag">Process Optimization</span>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance & Results Visual Graphs Section -->
+            <section id="results">
+                <h2>Client Impact & Results Metrics</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Visual breakdown of measurable outcomes achieved across client implementations and system overhauls.</p>
+
+                <div class="chart-container-wrapper">
+                    <div class="chart-selector">
+                        <button class="chart-btn active" onclick="switchMetric('seo')">Organic Search Growth</button>
+                        <button class="chart-btn" onclick="switchMetric('speed')">Core Web Vitals & Speed</button>
+                        <button class="chart-btn" onclick="switchMetric('leads')">Conversion Pipeline Improvement</button>
+                    </div>
+
+                    <div class="chart-box">
+                        <canvas id="resultsChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Digital Products, Templates & Downloads Section -->
+            <section id="shop">
+                <h2>Current Projects, Templates & Tools</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Production-ready starter kits, technical SEO schemas, and architectural templates available for download.</p>
+
+                <div class="grid">
+                    <!-- Item 1 -->
+                    <div class="card">
+                        <span class="shop-badge">Free / Open Source</span>
+                        <h3>Technical SEO JSON-LD Schema Generator</h3>
+                        <p>A ready-to-use C# / .NET library for generating validated, nested JSON-LD schema markups automatically for enterprise web apps.</p>
+                        <span class="price-tag">$0.00</span>
+                        <a href="https://github.com/DesignerDev1" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View Code on GitHub</a>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="card">
+                        <span class="shop-badge">Developer Tool</span>
+                        <h3>Clean Architecture .NET Web API Boilerplate</h3>
+                        <p>Modular backend project starter built with C#, Entity Framework, JWT authentication, and automated audit logging.</p>
+                        <span class="price-tag">$29.00</span>
+                        <a href="https://github.com/DesignerDev1" target="_blank" class="btn" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Get Starter Kit</a>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="card">
+                        <span class="shop-badge">Process Template</span>
+                        <h3>Digital Systems Audit & Workflow Matrix</h3>
+                        <p>Interactive spreadsheet & process optimization guide designed for operational assessments and legacy software modernizations.</p>
+                        <span class="price-tag">$19.00</span>
+                        <a href="https://github.com/DesignerDev1" target="_blank" class="btn btn-orange" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Download Template</a>
                     </div>
                 </div>
             </section>
@@ -483,7 +611,7 @@
                 <p style="margin-top: 1rem;">
                     <strong>Email:</strong> <span id="email-address">oasdev001@gmail.com</span>
                     <button class="copy-btn" onclick="copyEmail()">Copy</button><br>
-                    <strong>GitHub:</strong> <a href="https://github.com/OAS_Developer" target="_blank">github.com/OAS_Developer</a>
+                    <strong>GitHub:</strong> <a href="https://github.com/DesignerDev1" target="_blank">github.com/DesignerDev1</a>
                 </p>
             </section>
         </main>
@@ -495,7 +623,7 @@
 
     <!-- Interactive Scripts -->
     <script>
-        // Interactive Service Filter
+        // Filter Services Function
         function filterServices(category) {
             const cards = document.querySelectorAll('.service-card');
             const buttons = document.querySelectorAll('.filter-btn');
@@ -514,12 +642,10 @@
 
         // Interactive Project Estimator Calculation
         function calculateEstimate() {
-            const type = document.getElementById('project-type').value;
             const scale = document.getElementById('project-scale').value;
             const output = document.getElementById('estimate-output');
 
             let timeline = "";
-
             if (scale === "1") timeline = "1 - 2 Weeks";
             else if (scale === "2") timeline = "3 - 5 Weeks";
             else timeline = "6+ Weeks (Custom Sprint)";
@@ -533,6 +659,91 @@
             navigator.clipboard.writeText(email);
             alert('Email address copied to clipboard!');
         }
+
+        // Chart.js Results Dashboard Logic
+        let myChart;
+        const ctx = document.getElementById('resultsChart').getContext('2d');
+
+        const metricsData = {
+            seo: {
+                label: 'Monthly Organic Traffic (Post SEO Architecture Overhaul)',
+                labels: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'],
+                data: [1200, 2400, 4800, 9100, 15400, 24000],
+                color: '#00ff66'
+            },
+            speed: {
+                label: 'Core Web Vitals Speed Score (0 - 100)',
+                labels: ['Initial Audit', 'Schema Optimization', 'Code Refactoring', 'Final System Launch'],
+                data: [34, 62, 88, 99],
+                color: '#ff007f'
+            },
+            leads: {
+                label: 'Qualified Lead Inquiries per Month',
+                labels: ['Baseline', 'Q1 Optimization', 'Q2 Optimization', 'Q3 Optimization'],
+                data: [15, 38, 72, 110],
+                color: '#ff6600'
+            }
+        };
+
+        function renderChart(type) {
+            const dataset = metricsData[type];
+
+            if (myChart) {
+                myChart.destroy();
+            }
+
+            myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dataset.labels,
+                    datasets: [{
+                        label: dataset.label,
+                        data: dataset.data,
+                        borderColor: dataset.color,
+                        backgroundColor: dataset.color + '22',
+                        borderWidth: 3,
+                        pointBackgroundColor: dataset.color,
+                        pointRadius: 6,
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#ffffff',
+                                font: { family: '-apple-system, sans-serif', size: 13 }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#a0aab8' },
+                            grid: { color: '#222938' }
+                        },
+                        y: {
+                            ticks: { color: '#a0aab8' },
+                            grid: { color: '#222938' }
+                        }
+                    }
+                }
+            });
+        }
+
+        function switchMetric(type) {
+            const buttons = document.querySelectorAll('.chart-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderChart(type);
+        }
+
+        // Initialize default chart on load
+        window.onload = function() {
+            renderChart('seo');
+        };
     </script>
 </body>
 </html>
